@@ -7,7 +7,11 @@ app.get('/in', function (req, res) {
     for (const key in req.query) {
         if (Object.hasOwnProperty.call(req.query, key)) {
             const element = req.query[key];
-            messages[key]=element;
+            let time = new Date().getTime();
+            messages[key]={
+                element,
+                time
+            };
         }
     }
     res.send("ok")
@@ -15,7 +19,7 @@ app.get('/in', function (req, res) {
 
  app.get('/out/:key', function (req, res) {
     let key = req.params.key;
-    res.send(messages[key]);
+    res.send(messages[key])
  })
 
 
