@@ -20,6 +20,11 @@ app.get('/out/:key', function (req, res) {
     delete messages[key];
 })
 
+app.get('/out_test/:key', function (req, res) {
+    let key = req.params.key;
+    res.send(messages[key]?messages[key]:"none")
+})
+
 
 
 
