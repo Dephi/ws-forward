@@ -17,6 +17,7 @@ app.get('/in', function (req, res) {
 app.get('/out/:key', function (req, res) {
     let key = req.params.key;
     res.send(messages[key]?messages[key]:"none")
+    delete messages[key];
 })
 
 
