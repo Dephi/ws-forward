@@ -8,19 +8,18 @@ app.get('/in', function (req, res) {
         if (Object.hasOwnProperty.call(req.query, key)) {
             const element = req.query[key];
             let time = new Date().getTime();
-            messages[key]={
-                element,
-                time
-            };
+            messages[key] = element;
         }
     }
     res.send("ok")
- })
+})
 
- app.get('/out/:key', function (req, res) {
+app.get('/out/:key', function (req, res) {
     let key = req.params.key;
     res.send(messages[key])
- })
+})
+
+
 
 
 
