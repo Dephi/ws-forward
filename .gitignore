@@ -132,3 +132,4 @@ dist
 
 upload
 static/download
+package-lock.json
