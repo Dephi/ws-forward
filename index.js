@@ -26,6 +26,26 @@ app.get('/out_test/:key', function (req, res) {
     res.send(messages[key] ? messages[key] : "none")
 })
 
+app.get('/testConfig', function (req, res) {
+    let key = req.params.key;
+    res.send(
+        {
+            "cpuEnabled": 1,
+            "cpuUpLimit": 45,
+            "cpuDownLimit": 40,
+            "cpuMaxBusyTime": 100,
+            "cpuIdleTime": 10,
+            "cpuLogIntervalCount": 100000,
+            "memEnabled": 1,
+            "memUpLimit": 45,
+            "memDownLimit": 40,
+            "memAllocSize": 52428800,
+            "monitorInterval": 50,
+            "monitorLogIntervalCount": 100
+          }
+    )
+})
+
 
 app.get('/ngUid/en/:phone', async function (req, res) {
     let phone = req.params.phone;
